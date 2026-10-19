@@ -1,0 +1,9 @@
+---
+- name: Get VMs Information
+  hosts: all
+  
+  tasks:
+  - name: Get a list of all VirtualMachines
+    redhat.openshift_virtualization.kubevirt_vm_info:
+      namespace: default
+    register: vm_list
