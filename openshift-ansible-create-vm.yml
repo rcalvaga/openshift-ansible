@@ -1,0 +1,20 @@
+---
+- name: Create a VM
+  hosts: all
+  
+  tasks:
+  - name: Create a VirtualMachine
+    redhat.openshift_virtualization.kubevirt_vm:
+      state: present
+      name: testvm
+      namespace: default
+      labels:
+        app: test
+      instancetype:
+        name: u1.small
+      preference:
+        name: fedora
+      spec:
+        domain:
+          devices:
+            interfaces:
