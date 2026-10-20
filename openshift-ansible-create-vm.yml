@@ -6,14 +6,14 @@
   - name: Create a VirtualMachine
     redhat.openshift_virtualization.kubevirt_vm:
       state: present
-      name: testvm
+      name: "{{ vm_name }}"
       namespace: default
       labels:
-        app: test
+        app: "{{ app_name }}"
       instancetype:
-        name: u1.small
+        name: "{{ vm_flavor }}"
       preference:
-        name: fedora
+        name: "{{ vm_image }}"
       spec:
         domain:
           devices:
