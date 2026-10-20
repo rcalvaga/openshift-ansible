@@ -1,0 +1,10 @@
+---
+- name: Get Information From a VM
+  hosts: all
+  
+  tasks:
+  - name: Get an existing VirtualMachine
+    redhat.openshift_virtualization.kubevirt_vm_info:
+      name: rhel-10-test
+      namespace: default
+    register: default_testvm
