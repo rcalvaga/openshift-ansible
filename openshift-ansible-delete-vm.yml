@@ -5,6 +5,6 @@
   tasks:
   - name: Delete a VirtualMachine
     redhat.openshift_virtualization.kubevirt_vm:
-      name: testvm
-      namespace: default
+      name: "{{ vm_name }}"
+      namespace: "{{ vm_namespace }}"
       state: absent
