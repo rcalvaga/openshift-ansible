@@ -7,7 +7,7 @@
     redhat.openshift_virtualization.kubevirt_vm:
       state: present
       name: "{{ vm_name }}"
-      namespace: default
+      namespace: "{{ vm_namespace }}"
       labels:
         app: "{{ app_name }}"
       instancetype:
